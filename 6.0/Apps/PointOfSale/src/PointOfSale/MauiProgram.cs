@@ -2,7 +2,7 @@
 using Microsoft.Maui.LifecycleEvents;
 using Microsoft.Maui.Platform;
 using SkiaSharp.Views.Maui.Controls.Hosting;
-using ZXing.Net.Maui;
+//using ZXing.Net.Maui;
 
 #if WINDOWS
 using Microsoft.UI;
@@ -23,7 +23,7 @@ public static class MauiProgram
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
-            .UseBarcodeReader()
+            //.UseBarcodeReader()
 			.UseMauiCommunityToolkit()
             .UseSkiaSharp()
             .ConfigureFonts(fonts =>

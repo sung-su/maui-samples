@@ -28,9 +28,9 @@ public partial class OrderDetailsViewModel
         }
     }
 
-    [RelayCommand]
-    async Task Add()
-    {
-        await Shell.Current.GoToAsync($"{nameof(ScanPage)}");
-    }
+    //[RelayCommand]
+    //async Task Add()
+    //{
+    //    await Shell.Current.GoToAsync($"{nameof(ScanPage)}");
+    //}
 }
