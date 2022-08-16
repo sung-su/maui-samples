@@ -1,4 +1,4 @@
-﻿namespace PointOfSale.Pages.Handheld;
+namespace PointOfSale.Pages.Handheld;
 
 public partial class OrderDetailsPage : ContentPage
 {
@@ -6,4 +6,9 @@ public partial class OrderDetailsPage : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private void Add(object sender, EventArgs e)
+	{
+	}
+
 }

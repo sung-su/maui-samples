@@ -1,13 +1,13 @@
 namespace PointOfSale.Pages.Handheld;
 
-[INotifyPropertyChanged]
-public partial class OrdersViewModel
+//[INotifyPropertyChanged]
+public partial class OrdersViewModel : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    private ObservableCollection<Order> _orders;
+    //[ObservableProperty]
+    public ObservableCollection<Order> Orders { get; set; }
 
     public OrdersViewModel()
     {
-        _orders = new ObservableCollection<Order>(AppData.Orders);
+        Orders = new ObservableCollection<Order>(AppData.Orders);
     }
 }

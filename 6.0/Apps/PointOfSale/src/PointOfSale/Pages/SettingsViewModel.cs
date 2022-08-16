@@ -1,15 +1,15 @@
-﻿using System;
+using System;
 namespace PointOfSale.Pages;
 
-[INotifyPropertyChanged]
-public partial class SettingsViewModel
+//[INotifyPropertyChanged]
+public partial class SettingsViewModel : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    ObservableCollection<Item> _products;
+    //[ObservableProperty]
+    public ObservableCollection<Item> Products { get; set; }
 
     public SettingsViewModel()
     {
-        _products = new ObservableCollection<Item>(
+        Products = new ObservableCollection<Item>(
             AppData.Items
         );
     }

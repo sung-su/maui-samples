@@ -1,25 +1,39 @@
 namespace PointOfSale.Pages.Handheld;
 
-[INotifyPropertyChanged]
+//[INotifyPropertyChanged]
 [QueryProperty("Order","Order")]
-public partial class SignatureViewModel
+public partial class SignatureViewModel : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    Order order;
-    
-    [RelayCommand]
+    //[ObservableProperty]
+    public Order Order { get; set; }
+
+    //[RelayCommand]
     async Task Done()
     {
         var navigationParameter = new Dictionary<string, object>
         {
-            { "Order", order }
+            { "Order", Order }
+        };
+        await Shell.Current.GoToAsync($"{nameof(ReceiptPage)}", navigationParameter);
+    }
+    public async Task OnDone(object sender, EventArgs args)
+    {
+        var navigationParameter = new Dictionary<string, object>
+        {
+            { "Order", Order }
         };
         await Shell.Current.GoToAsync($"{nameof(ReceiptPage)}", navigationParameter);
     }
 
-    [RelayCommand]
+    //[RelayCommand]
     void Clear()
     {
         // msg the signature pad
     }
+
+    public void OnClear(object sender, EventArgs args)
+    {
+
+    }
+
 }

@@ -1,21 +1,34 @@
+using System.ComponentModel;
 namespace PointOfSale.Models;
 
-[INotifyPropertyChanged]
-public partial class Item
+//[INotifyPropertyChanged]
+public partial class Item : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
+    //[ObservableProperty]
     string title;
+    public string Title { get => title; set => title = value;}
 
-    [ObservableProperty]
-    int quantity;
+    //[ObservableProperty]
+    int quantity = 0;
+    public int Quantity
+    {
+        get => quantity;
+        set
+        {
+            quantity = value;
+            OnQuantityChanged(value);
+        }
+    }
 
-    [ObservableProperty]
+    //[ObservableProperty]
     string image;
+    public string Image { get => image; set => image = value; }
 
-    [ObservableProperty]
-    double price;
+    //[ObservableProperty]
+    double price = 0;
+    public double Price { get => price; set => price = value; }
 
-    partial void OnQuantityChanged(int value)
+    void OnQuantityChanged(int value)
     {
         OnPropertyChanged(nameof(SubTotal));
     }

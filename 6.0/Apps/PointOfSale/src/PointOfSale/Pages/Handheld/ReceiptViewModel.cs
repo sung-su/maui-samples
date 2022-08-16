@@ -1,14 +1,19 @@
 namespace PointOfSale.Pages.Handheld;
 
-[INotifyPropertyChanged]
+//[INotifyPropertyChanged]
 [QueryProperty("Order","Order")]
-public partial class ReceiptViewModel
+public partial class ReceiptViewModel : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    Order order;
+    //[ObservableProperty]
+    public Order Order { get; set; }
 
-    [RelayCommand]
+    //[RelayCommand]
     async void Done()
+    {
+        await Shell.Current.GoToAsync("///orders");
+    }
+
+    public async void OnDone(object sender, EventArgs args)
     {
         await Shell.Current.GoToAsync("///orders");
     }

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:handheld="clr-namespace:PointOfSale.Pages.Handheld"
@@ -27,8 +27,10 @@
                HorizontalTextAlignment="Center" />
 
         <Grid ColumnSpacing="20" ColumnDefinitions="*,*" Grid.Row="4">
-            <Button Text="Clear" Grid.Column="0" Command="{Binding ClearCommand}" Style="{StaticResource PrimaryButtonOutline}" HorizontalOptions="Fill"/>
-            <Button Text="Done" Grid.Column="1" Command="{Binding DoneCommand}" HorizontalOptions="Fill"/>
+            <!--<Button Text="Clear" Grid.Column="0" Command="{Binding ClearCommand}" Style="{StaticResource PrimaryButtonOutline}" HorizontalOptions="Fill"/>
+            <Button Text="Done" Grid.Column="1" Command="{Binding DoneCommand}" HorizontalOptions="Fill"/>-->
+            <Button Text="Clear" Grid.Column="0"  Style="{StaticResource PrimaryButtonOutline}" HorizontalOptions="Fill"/>
+            <Button Text="Done" Grid.Column="1"  HorizontalOptions="Fill"/>
         </Grid>
     </Grid>
 </ContentPage>

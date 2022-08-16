@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:a="clr-namespace:PointOfSale"
              xmlns:system="clr-namespace:System;assembly=netstandard"
-             xmlns:mct="clr-namespace:CommunityToolkit.Maui;assembly=CommunityToolkit.Maui" xmlns:views="clr-namespace:PointOfSale.Pages.Views"
+             xmlns:views="clr-namespace:PointOfSale.Pages.Views"
              x:Class="PointOfSale.Pages.DashboardPage"
              Title="DashboardPage"
              Shell.NavBarIsVisible="False">

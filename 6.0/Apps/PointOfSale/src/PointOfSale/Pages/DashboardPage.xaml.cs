@@ -1,4 +1,4 @@
-﻿using Microcharts;
+using Microcharts;
 using SkiaSharp.Views.Maui;
 
 namespace PointOfSale.Pages;

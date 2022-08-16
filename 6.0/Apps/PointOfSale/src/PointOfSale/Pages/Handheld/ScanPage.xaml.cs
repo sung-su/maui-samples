@@ -29,24 +29,24 @@ public partial class ScanPage : ContentPage
     //    });
     //}
 
-    //private async Task CloseModal(string value)
-    //{
-    //    var item = new Item
-    //    {
-    //        Price = 0,
-    //        Quantity = 1,
-    //        Title = value
-    //    };
-    //    var navigationParameter = new Dictionary<string, object>
-    //    {
-    //            { "Item", item }
-    //        };
+    private async Task CloseModal(string value)
+    {
+        var item = new Item
+        {
+            Price = 0,
+            Quantity = 1,
+            Title = value
+        };
+        var navigationParameter = new Dictionary<string, object>
+        {
+                { "Item", item }
+            };
 
-    //    await Shell.Current.GoToAsync("..", navigationParameter);
-    //}
+        await Shell.Current.GoToAsync("..", navigationParameter);
+    }
 
-    //async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
-    //{
-    //    await Shell.Current.GoToAsync("..");
-    //}
+    async void ImageButton_Clicked(System.Object sender, System.EventArgs e)
+    {
+        await Shell.Current.GoToAsync("..");
+    }
 }

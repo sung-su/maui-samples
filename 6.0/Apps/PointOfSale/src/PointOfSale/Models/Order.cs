@@ -1,34 +1,38 @@
-using CommunityToolkit.Mvvm.ComponentModel;
+//using CommunityToolkit.Mvvm.ComponentModel;
 using PointOfSale.Pages.Handheld;
 
 namespace PointOfSale.Models;
 
-[INotifyPropertyChanged]
-public partial class Order
+//[INotifyPropertyChanged]
+public partial class Order : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    private int table;
+    //[ObservableProperty]
+    int table;
+    public int Table { get => table; set => table = value; }
 
-    [ObservableProperty] 
-    private double tip;
+    //[ObservableProperty]
+    double tip;
+    public double Tip { get => tip; set => tip = value; }
 
     public string Total
     {
         get
         {
-            var tot = items.Sum(i => (i.Price * i.Quantity));
-            if (tip != 0)
-                tot = tot + (tot * tip);
+            var tot = Items.Sum(i => (i.Price * i.Quantity));
+            if (Tip != 0)
+                tot = tot + (tot * Tip);
             return tot.ToString("N2");
         }
     }
 
-    [ObservableProperty]
-    private List<Item> items;
+    //[ObservableProperty]
+    List<Item> items;
+    public List<Item> Items { get => items; set => items = value; }
 
-    [ObservableProperty] 
-    private string status;
-    
+    //[ObservableProperty]
+    string status;
+    public string Status { get => status; set => status = value; }
+
     private static readonly Random _random = new Random();
     
     private static readonly string[] brushes = new string[] { "#FFB572", "#65B0F6", "#FF7CA3", "#50D1AA", "#9290FE" };
@@ -41,8 +45,24 @@ public partial class Order
         }
     }
 
-    [RelayCommand]
+    //[RelayCommand]
     private async void Pay()
+    {
+        try
+        {
+            var navigationParameter = new Dictionary<string, object>
+            {
+                { "Order", this }
+            };
+            await Shell.Current.GoToAsync($"{nameof(OrderDetailsPage)}", navigationParameter);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine(ex.Message);
+        }
+    }
+
+    public async void OnPay(object sender, EventArgs args)
     {
         try
         {

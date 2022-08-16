@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Maui;
+//using CommunityToolkit.Maui;
 using Microsoft.Maui.LifecycleEvents;
 using Microsoft.Maui.Platform;
 using SkiaSharp.Views.Maui.Controls.Hosting;
@@ -24,7 +24,7 @@ public static class MauiProgram
 		builder
 			.UseMauiApp<App>()
             //.UseBarcodeReader()
-			.UseMauiCommunityToolkit()
+			//.UseMauiCommunityToolkit()
             .UseSkiaSharp()
             .ConfigureFonts(fonts =>
 			{

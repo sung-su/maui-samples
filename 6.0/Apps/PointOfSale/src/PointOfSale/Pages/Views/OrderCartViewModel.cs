@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 namespace PointOfSale.Pages.Views;
 
-[INotifyPropertyChanged]
-public partial class OrderCartViewModel
+//[INotifyPropertyChanged]
+public partial class OrderCartViewModel : MyNotifyPropertyChanged
 {
-    [ObservableProperty]
-    Order order;
+    //[ObservableProperty]
+    public Order Order { get; set; }
 
     public OrderCartViewModel()
     {
